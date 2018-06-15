@@ -1,11 +1,14 @@
 
 package com.carlo.mavenproject1;
 
+import Classes.*;
 import com.jfoenix.controls.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.*;
 import javafx.fxml.*;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,7 +16,8 @@ import javax.swing.JOptionPane;
  *
  * @author Windows
  */
-public class LoginController implements Initializable {
+public class LoginController implements Initializable 
+{
 
     @FXML
     private JFXButton btn_submit;
@@ -28,6 +32,7 @@ public class LoginController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
     
    
 
@@ -50,5 +55,15 @@ public class LoginController implements Initializable {
                  JOptionPane.showMessageDialog(null, "Wrong inputs", "Wrong", JOptionPane.ERROR_MESSAGE);
          }
         return false;
+    }
+    
+    @FXML
+    void registerClicked(ActionEvent event)
+    {
+        new StartNewWindow
+                .StartNewWindowBuilder("register.fxml")
+                .setWindowTitle("Register")
+                .setIsResizable(false)
+                .show();
     }
 }
